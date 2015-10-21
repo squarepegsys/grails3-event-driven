@@ -4,6 +4,15 @@ class CounterController {
   def loopService
 
     def index() { 
-      loopService.count(5)
+
     }
+
+  def count() { 
+    def myInt = params.number as Integer
+
+    loopService.count(myInt)
+
+    flash.message="Check yer output"
+    redirect  (action:"index")
+  }
 }
